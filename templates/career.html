@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Description</title>
+    <link rel="stylesheet" href="{% static 'css/styles1.css' %}">
+</head>
+<body>
+        
+    <main>
+        <h3>Job Title: Frontend Developer</h3>
+        <p><strong>Location:</strong> Pune, Maharashtra, India</p>
+        <p><strong>Job Type:</strong> Full-Time</p>
+        
+        <section>
+            <h3>Job Summary</h3>
+            <p>
+                We are looking for a skilled Frontend Developer to join our team. The ideal candidate will have experience with ReactJS and frontend technologies, and will be responsible for designing, developing, and implementing user interface components.
+            </p>
+        </section>
+        
+        <section>
+            <h3>Responsibilities</h3>
+            <ul>
+                <li>Develop new user-facing features.</li>
+                <li>Build reusable code and libraries for future use.</li>
+                <li>Ensure the technical feasibility of UI/UX designs.</li>
+                <li>Optimize application for maximum speed and scalability.</li>
+                <li>Collaborate with other team members and stakeholders.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h3>Requirements</h3>
+            <ul>
+                <li>Proficiency in HTML, CSS, and JavaScript.</li>
+                <li>Experience with ReactJS and frontend frameworks.</li>
+                <li>Strong understanding of web development principles.</li>
+                <li>Good problem-solving skills and attention to detail.</li>
+                <li>Bachelor's degree in Computer Science or related field.</li>
+            </ul>
+        </section>
+        
+        <section>
+            <h3>Benefits</h3>
+            <ul>
+                <li>Competitive salary.</li>
+                <li>Health insurance.</li>
+                <li>Flexible working hours.</li>
+                <li>Opportunity to work with a dynamic and innovative team.</li>
+            </ul>
+        </section>
+
+        <button class="apply-button" id="applyBtn">Apply Now</button>
+    </main>
+
+    <!-- Modal -->
+    <div id="applyModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Application Form</h2>
+            <form id="applicationForm">
+                <label for="name">Full Name: <span class="required">*</span></label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email: <span class="required">*</span></label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="phone">Phone: <span class="required">*</span></label>
+                <input type="tel" id="phone" name="phone" required>
+
+                <label for="linkedin">LinkedIn Profile: <span class="required">*</span></label>
+                <input type="url" id="linkedin" name="linkedin" required>
+
+                <label for="github">GitHub Profile:</label>
+                <input type="url" id="github" name="github">
+
+                <label for="portfolio">Portfolio:</label>
+                <input type="url" id="portfolio" name="portfolio">
+
+                <label for="resume">Upload Resume: <span class="required">*</span></label>
+                <input type="file" id="resume" name="resume" required>
+
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="{% static 'js/scripts1.js' %}"></script>
+</body>
+</html>
