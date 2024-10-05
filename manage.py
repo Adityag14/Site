@@ -1,10 +1,14 @@
-#!/usr/bin/env python
 import os
 import sys
-from django.core.wsgi import get_wsgi_application  # Import WSGI application
+from django.conf import settings
 
 if __name__ == '__main__':
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'discovercode.settings')
+
+    # Force Django to configure settings
+    if not settings.configured:
+        settings.configure()
+
     try:
         from django.core.management import execute_from_command_line
     except ImportError as exc:
@@ -14,6 +18,3 @@ if __name__ == '__main__':
             "forget to activate a virtual environment?"
         ) from exc
     execute_from_command_line(sys.argv)
-
-# Expose WSGI app for Vercel
-app = get_wsgi_application()
