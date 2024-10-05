@@ -1,12 +1,18 @@
 {
   "version": 2,
+  "env": {
+    "DJANGO_SETTINGS_MODULE": "discovercode.settings"
+  },
   "builds": [
-    { "src": "manage.py", "use": "@vercel/python" }
+    {
+      "src": "manage.py",
+      "use": "@vercel/python"
+    }
   ],
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "/manage.py"
+      "dest": "manage.py"
     }
   ]
 }
