@@ -1,5 +1,4 @@
 Django
-mysqlclient
 djangorestframework
 gunicorn
 whitenoise
