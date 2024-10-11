@@ -25,7 +25,7 @@ SECRET_KEY = 'ie(3oagqh1$%0swf@*)3zj)7*30*+x$mu!)xc_g=gjqih00hgw'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False  # Set to False for production
 
-ALLOWED_HOSTS = ['discovercode.in', 'discovercode05.vercel.app', 'site-6iif.vercel.app', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['discovercode.in', 'site-6iif.vercel.app']
 
 
 # Application definition
