@@ -1,2 +1,35 @@
+name = "discovercode"
+type = "javascript"  # This can be left as 'javascript' for the workers if you are using them
+account_id = "eb4530063bca58b2c82a87564e085ee6"
+workers_dev = true  # Set to true for development, false for production
+compatibility_date = "2024-10-12"  # Updated to today's date
+
+[env.production]
+workers_dev = false  # Set to false for your production environment
+route = "https://discovercode.in/*"
+zone_id = "d0aef04714556efa00b51a1237d5f4d6"
+
 [build]
-command = "python manage.py collectstatic --noinput && python manage.py migrate"
+command = "python manage.py collectstatic --noinput"  # Collect static files in build phase
+upload = { 
+  format = "service-worker",  # Keeping format as service-worker for static assets handling
+  dir = "./static"  # Path to your static directory where your CSS, JS files are located
+}
+
+[[kv_namespaces]]
+binding = "YOUR_KV_NAMESPACE"  # Cloudflare KV Namespace (only if needed)
+id = "your-kv-namespace-id"
+preview_id = "your-kv-namespace-preview-id"
+
+[site]
+bucket = "./static/"  # Path to static files like CSS, JS
+entry-point = "./"
+
+[env.staging]
+workers_dev = true  # Set to true for your staging environment
+route = "https://staging.discovercode.in/*"
+zone_id = "your-zone-id"
+
+[durable_objects]
+bindings = [{name = "YOUR_OBJECT", class_name = "YourClassName", script_name = "worker-script"}]  # Only if using Durable Objects
+
